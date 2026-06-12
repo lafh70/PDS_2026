@@ -1,0 +1,50 @@
+# config/clients/template/client.yaml
+client:
+  name: "ACME Corp"
+  code: "ACME"
+  version: "1.0"
+  year: 2026
+
+locale:
+  language: "en"
+  date_format: "%Y-%m-%d"
+  decimal_separator: "."
+  thousand_separator: ","
+  currency: "USD"
+  currency_symbol: "$"
+  timezone: "America/New_York"
+
+output:
+  tracker_filename: "output/Tracker.xlsx"
+  pbi_filename: "output/Tracker_PBI.xlsx"
+  html_filename: "output/Tracker.html"
+  csv_filename: "output/Tracker.csv"
+  log_filename: "pipeline.log"
+
+storage:
+  entrada_canonica:
+    provider: local
+    local_path: entrada_canonica/
+  entrada_materializada:
+    provider: local
+    local_path: entrada/
+  salidas:
+    provider: local
+    local_path: output/
+  logs:
+    provider: local
+    local_path: logs/
+
+sharepoint:
+  enabled: false
+  site_url: ""
+  document_library: "Shared Documents/PMO Tracker"
+  upload_on_complete: false
+
+backup:
+  enabled: true
+  retention_days: 30
+
+branding:
+  primary_color: "#003087"
+  secondary_color: "#FF6600"

@@ -1,0 +1,35 @@
+client_name: hackathon
+version: "2026-Q1"
+
+storage:
+  entrada_canonica:
+    provider: local
+    local_path: entrada_canonica/
+  entrada_materializada:
+    provider: local
+    local_path: entrada/
+  salidas:
+    provider: local
+    local_path: out_/
+  logs:
+    provider: local
+    local_path: logs/
+
+semaforos:
+  ddo_negro_keywords: ["CANCELADO", "NO REQUIERE"]
+  ddo_verde_keywords: ["ADJUDICADO", "ADJUDICADA"]
+  ddo_amarillo_keywords: ["EN PROCESO"]
+  ddo_alerta_ventana_dias: 14
+
+forecast:
+  duraciones_obras:
+    INTEGRAL: 120
+    MEDIA: 90
+    BAJA: 30
+    CORPORATIVO: 120
+    RELOCALIZACION: 180
+  intervalo_h1_h2: 21
+  intervalo_h2_h3: 30
+  intervalo_h3_h4: 21
+  intervalo_h4_h5: 30
+  intervalo_h5_h6: 7

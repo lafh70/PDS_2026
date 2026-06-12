@@ -1,0 +1,69 @@
+# config/clients/hackathon/client.yaml
+client:
+  name: "Hackathon Demo"
+  code: "HACKATHON"
+  version: "2026-Q1"
+  year: 2026
+
+locale:
+  language: "es"
+  date_format: "%Y-%m-%d"
+  decimal_separator: ","
+  thousand_separator: "."
+  currency: "ARS"
+  currency_symbol: "$"
+  timezone: "America/Argentina/Buenos_Aires"
+
+output:
+  tracker_filename: "out_/PDS_TRACKER.xlsx"
+  pbi_filename: "out_/PDS_TRACKER_PBI.xlsx"
+  html_filename: "out_/PDS_TRACKER.html"
+  csv_filename: "out_/PDS_TRACKER.csv"
+  log_filename: "pipeline.log"
+
+storage:
+  entrada_canonica:
+    provider: local
+    local_path: entrada_canonica/
+  entrada_materializada:
+    provider: local
+    local_path: entrada/
+  salidas:
+    provider: local
+    local_path: out_/
+  logs:
+    provider: local
+    local_path: logs/
+
+sharepoint:
+  enabled: false
+  site_url: ""
+  document_library: ""
+  upload_on_complete: false
+
+backup:
+  enabled: true
+  retention_days: 30
+
+branding:
+  primary_color: "#1f4e79"
+  secondary_color: "#FF6600"
+
+semaforos:
+  ddo_negro_keywords: ["CANCELADO", "NO REQUIERE"]
+  ddo_verde_keywords: ["ADJUDICADO", "ADJUDICADA"]
+  ddo_amarillo_keywords: ["EN PROCESO"]
+  ddo_alerta_ventana_dias: 14
+
+forecast:
+  duraciones_obras:
+    INTEGRAL: 120
+    MEDIA: 90
+    BAJA: 30
+    CORPORATIVO: 120
+    RELOCALIZACION: 180
+  intervalo_h1_h2: 21
+  intervalo_h2_h3: 30
+  intervalo_h3_h4: 21
+  intervalo_h4_h5: 30
+  intervalo_h5_h6: 7

@@ -1,0 +1,35 @@
+default_durations:
+  H1_to_H2: 15
+  H2_to_H3: 21
+  H3_to_H4: 10
+  H4_to_H5: 7
+  H5_to_H6: 20
+  H6_to_H7: 90
+  H7_to_H8: 5
+  H8_to_H9: 3
+  H9_to_H10: 30
+  H10_to_H11: 10
+
+overrides_by_intervention_type:
+  NEW_BUILD:
+    H6_to_H7: 180
+    H5_to_H6: 30
+  REFURBISHMENT:
+    H6_to_H7: 120
+  FIT_OUT:
+    H6_to_H7: 60
+  ATM:
+    H6_to_H7: 21
+    H5_to_H6: 7
+  MAINTENANCE:
+    H6_to_H7: 30
+  INTEGRAL:
+    H6_to_H7: 120
+  MEDIA:
+    H6_to_H7: 90
+  BAJA:
+    H6_to_H7: 30
+
+h1_default: "next_business_day"
+immutable_milestones: [H6, H11]
+holidays: []

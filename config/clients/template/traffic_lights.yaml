@@ -1,0 +1,118 @@
+state_priority:
+  WHITE: 0
+  GREEN: 1
+  YELLOW: 2
+  ORANGE: 3
+  RED: 4
+  BLACK: 5
+
+icons:
+  WHITE: "[ ]"
+  GREEN: "[G]"
+  YELLOW: "[Y]"
+  ORANGE: "[O]"
+  RED: "[R]"
+  BLACK: "[B]"
+
+axes:
+  procurement_ddo:
+    label_en: "DDO"
+    label_es: "DDO"
+    source_columns: [Licitación_DDO, Fecha_Adj_DDO]
+    rules:
+      BLACK:
+        condition: "DDO_Status in cancelled_values"
+        reason_es: "DDO cancelado o no requerido"
+      GREEN:
+        condition: "DDO_Awarded == true"
+        reason_es: "DDO adjudicado"
+      WHITE:
+        condition: "DDO not started"
+        reason_es: "DDO no iniciado"
+      RED:
+        condition: "DDO overdue"
+        reason_es: "DDO vencido sin adjudicar"
+      YELLOW:
+        condition: "default"
+        reason_es: "DDO en proceso"
+
+  procurement_gc:
+    label_en: "GC"
+    label_es: "GC"
+    source_columns: [Licitación_GC, Fecha_Adj_GC]
+    rules:
+      BLACK:
+        condition: "GC cancelled"
+        reason_es: "GC cancelado o no requerido"
+      GREEN:
+        condition: "GC awarded"
+        reason_es: "GC adjudicado"
+      WHITE:
+        condition: "GC not started"
+        reason_es: "GC no iniciado"
+      RED:
+        condition: "GC overdue"
+        reason_es: "GC vencido sin adjudicar"
+      YELLOW:
+        condition: "default"
+        reason_es: "GC en proceso"
+
+  permits:
+    label_en: "Permits"
+    label_es: "Permisos"
+    source_columns: [Status_Permiso, H8, H9, H10]
+    rules:
+      BLACK:
+        condition: "not required"
+        reason_es: "Permiso no requerido"
+      GREEN:
+        condition: "approved"
+        reason_es: "Permiso aprobado"
+      WHITE:
+        condition: "not requested"
+        reason_es: "Permiso no solicitado"
+      RED:
+        condition: "overdue 60+"
+        reason_es: "Permiso pendiente +60 dias"
+      YELLOW:
+        condition: "default"
+        reason_es: "Permiso en tramite"
+
+  finance:
+    label_en: "Finance"
+    label_es: "Finanzas"
+    source_columns: [Pct_Consumed, BC_Nro]
+    thresholds:
+      green_max: 70
+      yellow_max: 85
+    rules:
+      WHITE:
+        condition: "no BC"
+        reason_es: "Sin centro de costos"
+      GREEN:
+        condition: "on track"
+        reason_es: "Presupuesto en control"
+      YELLOW:
+        condition: "warning"
+        reason_es: "Presupuesto cerca del limite"
+      RED:
+        condition: "critical"
+        reason_es: "Presupuesto critico"
+
+  construction_start:
+    label_en: "Construction"
+    label_es: "Obra"
+    source_columns: [H6, H7, Etapa]
+    rules:
+      GREEN:
+        condition: "started"
+        reason_es: "Obra iniciada"
+      WHITE:
+        condition: "not scheduled"
+        reason_es: "Obra no programada"
+      RED:
+        condition: "overdue"
+        reason_es: "Inicio de obra vencido"
+      YELLOW:
+        condition: "default"
+        reason_es: "Obra pendiente"

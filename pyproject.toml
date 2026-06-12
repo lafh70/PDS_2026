@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pds-2026"
+version = "2026.1.0"
+description = "Project Delivery System - PMO multicliente"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2.0",
+  "openpyxl>=3.1.0",
+  "pyyaml>=6.0",
+  "requests>=2.31.0",
+  "python-dateutil>=2.8.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "pytest-cov>=4.1.0"]
+
+[tool.setuptools.packages.find]
+include = ["pds_core*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

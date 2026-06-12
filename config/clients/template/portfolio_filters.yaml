@@ -1,0 +1,22 @@
+exclude_stages:
+  - COMPLETED
+  - CANCELLED
+  - ON HOLD
+  - FINALIZADO
+  - CANCELADO
+  - ETAPA 0
+
+exclude_intervention_types: []
+
+segments:
+  ATM:
+    sheet: MASTER_ATM
+    filter:
+      intervention_type: ATM
+  MAINTENANCE:
+    sheet: MASTER_MAINTENANCE
+    filter:
+      intervention_type: MAINTENANCE
+
+active_year: 2026
+filter_by_year: true

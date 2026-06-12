@@ -1,0 +1,48 @@
+intervention_types:
+  - code: REFURBISHMENT
+    label_en: "Full Refurbishment"
+    label_es: "Refacción Integral"
+    h6_to_h7_days: 120
+    enabled: true
+
+  - code: FIT_OUT
+    label_en: "Fit Out"
+    label_es: "Acondicionamiento"
+    h6_to_h7_days: 60
+    enabled: true
+
+  - code: MAINTENANCE
+    label_en: "Maintenance"
+    label_es: "Mantenimiento"
+    h6_to_h7_days: 30
+    enabled: true
+
+  - code: NEW_BUILD
+    label_en: "New Build"
+    label_es: "Obra Nueva"
+    h6_to_h7_days: 180
+    enabled: true
+
+  - code: ATM
+    label_en: "ATM Installation"
+    label_es: "Instalación ATM"
+    h6_to_h7_days: 21
+    enabled: true
+
+  - code: INTEGRAL
+    label_en: "Integral"
+    label_es: "Integral"
+    h6_to_h7_days: 120
+    enabled: true
+
+  - code: MEDIA
+    label_en: "Medium"
+    label_es: "Media"
+    h6_to_h7_days: 90
+    enabled: true
+
+  - code: BAJA
+    label_en: "Low"
+    label_es: "Baja"
+    h6_to_h7_days: 30
+    enabled: true

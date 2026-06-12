@@ -1,0 +1,27 @@
+client_name: test_fixture
+version: "1.0"
+
+storage:
+  entrada_canonica:
+    provider: local
+    local_path: entrada_canonica/
+  entrada_materializada:
+    provider: local
+    local_path: entrada/
+  salidas:
+    provider: local
+    local_path: out_/
+  logs:
+    provider: local
+    local_path: logs/
+
+semaforos:
+  ddo_verde_keywords: ["ADJUDICADO"]
+  finance_alerta_porcentaje: 85
+
+forecast:
+  duraciones_obras:
+    INTEGRAL: 120
+
+ingestion:
+  project_id_format: "^[A-Z]{2}-\\d{4}-\\d{4}-\\d{2}$"

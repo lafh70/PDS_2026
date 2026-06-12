@@ -1,0 +1,8 @@
+# Dependencias flexibles (Python 3.10–3.14). Usar por defecto.
+pandas>=2.2.0
+openpyxl>=3.1.0
+pyyaml>=6.0
+requests>=2.31.0
+python-dateutil>=2.8.2
+pytest>=8.0.0
+pytest-cov>=4.1.0

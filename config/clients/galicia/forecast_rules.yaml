@@ -1,0 +1,27 @@
+default_durations:
+  H1_to_H2: 21
+  H2_to_H3: 30
+  H3_to_H4: 21
+  H4_to_H5: 30
+  H5_to_H6: 7
+  H6_to_H7: 90
+  H7_to_H8: 5
+  H8_to_H9: 3
+  H9_to_H10: 30
+  H10_to_H11: 10
+
+overrides_by_intervention_type:
+  INTEGRAL:
+    H6_to_H7: 120
+  MEDIA:
+    H6_to_H7: 90
+  BAJA:
+    H6_to_H7: 30
+  CORPORATIVO:
+    H6_to_H7: 120
+  RELOCALIZACION:
+    H6_to_H7: 180
+
+h1_default: "next_business_day"
+immutable_milestones: [H6, H11]
+holidays: []

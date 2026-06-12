@@ -1,0 +1,69 @@
+client:
+  name: "Galicia"
+  code: "GALICIA"
+  version: "2026-Q1"
+  year: 2026
+
+locale:
+  language: "es"
+  date_format: "%Y-%m-%d"
+  currency: "ARS"
+  timezone: "America/Argentina/Buenos_Aires"
+
+output:
+  tracker_filename: "galicia_data/out_/PDS_TRACKER.xlsx"
+  pbi_filename: "galicia_data/out_/PDS_TRACKER_PBI.xlsx"
+  html_filename: "galicia_data/out_/PDS_TRACKER.html"
+  csv_filename: "galicia_data/out_/PDS_TRACKER.csv"
+  log_filename: "pipeline.log"
+
+storage:
+  entrada_canonica:
+    provider: hybrid
+    local_path: galicia_data/entrada_canonica/
+    sharepoint_folder: M44/Descargas
+    read_from: local_first
+    write_to: both
+  entrada_materializada:
+    provider: hybrid
+    local_path: galicia_data/entrada/
+    sharepoint_folder: M45/Intermedios
+    read_from: local_first
+    write_to: both
+  salidas:
+    provider: hybrid
+    local_path: galicia_data/out_/
+    sharepoint_folder: M43/Reportes
+    read_from: local_first
+    write_to: both
+  logs:
+    provider: hybrid
+    local_path: galicia_data/logs/
+    sharepoint_folder: M46/Auditoria
+    write_to: both
+  sharepoint_site: "https://jlllatam.sharepoint.com/sites/Galicia"
+
+sharepoint:
+  enabled: true
+  upload_on_complete: false
+
+backup:
+  enabled: true
+  retention_days: 30
+
+semaforos:
+  ddo_alerta_ventana_dias: 7
+  finance_alerta_porcentaje: 80
+
+forecast:
+  duraciones_obras:
+    INTEGRAL: 150
+    MEDIA: 110
+    BAJA: 45
+    CORPORATIVO: 150
+    RELOCALIZACION: 200
+
+columnas_override:
+  Nombre: "Nombre_Proyecto"
+  H6: "Fecha_Inicio_Obra"
+  H11: "Fecha_Cierre_Final"

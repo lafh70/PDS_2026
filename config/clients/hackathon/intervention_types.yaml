@@ -1,0 +1,30 @@
+intervention_types:
+  - code: INTEGRAL
+    label_en: "Integral"
+    label_es: "Integral"
+    h6_to_h7_days: 120
+    enabled: true
+
+  - code: MEDIA
+    label_en: "Medium"
+    label_es: "Media"
+    h6_to_h7_days: 90
+    enabled: true
+
+  - code: BAJA
+    label_en: "Low"
+    label_es: "Baja"
+    h6_to_h7_days: 30
+    enabled: true
+
+  - code: CORPORATIVO
+    label_en: "Corporate"
+    label_es: "Corporativo"
+    h6_to_h7_days: 120
+    enabled: true
+
+  - code: RELOCALIZACION
+    label_en: "Relocation"
+    label_es: "Relocalización"
+    h6_to_h7_days: 180
+    enabled: true

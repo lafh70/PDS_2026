@@ -1,0 +1,88 @@
+state_priority:
+  WHITE: 0
+  GREEN: 1
+  YELLOW: 2
+  ORANGE: 3
+  RED: 4
+  BLACK: 5
+
+icons:
+  WHITE: "[ ]"
+  GREEN: "[G]"
+  YELLOW: "[Y]"
+  ORANGE: "[O]"
+  RED: "[R]"
+  BLACK: "[B]"
+
+axes:
+  procurement_ddo:
+    label_en: "DDO"
+    label_es: "DDO"
+    source_columns: [Licitación_DDO, Fecha_Adj_DDO]
+    rules:
+      BLACK:
+        condition: "cancelled"
+        reason_es: "DDO cancelado o no requerido"
+      GREEN:
+        condition: "awarded"
+        reason_es: "DDO adjudicado"
+      YELLOW:
+        condition: "default"
+        reason_es: "DDO en proceso"
+
+  procurement_gc:
+    label_en: "GC"
+    label_es: "GC"
+    source_columns: [Licitación_GC, Fecha_Adj_GC]
+    rules:
+      BLACK:
+        condition: "cancelled"
+        reason_es: "GC cancelado o no requerido"
+      GREEN:
+        condition: "awarded"
+        reason_es: "GC adjudicado"
+      YELLOW:
+        condition: "default"
+        reason_es: "GC en proceso"
+
+  permits:
+    label_en: "Permits"
+    label_es: "Permisos"
+    source_columns: [Status_Permiso, H8, H9, H10]
+    rules:
+      GREEN:
+        condition: "approved"
+        reason_es: "Permiso aprobado"
+      YELLOW:
+        condition: "default"
+        reason_es: "Permiso en tramite"
+
+  finance:
+    label_en: "Finance"
+    label_es: "Finanzas"
+    source_columns: [Pct_Consumed, BC_Nro]
+    thresholds:
+      green_max: 70
+      yellow_max: 85
+    rules:
+      GREEN:
+        condition: "on track"
+        reason_es: "Presupuesto en control"
+      YELLOW:
+        condition: "warning"
+        reason_es: "Presupuesto cerca del limite"
+      RED:
+        condition: "critical"
+        reason_es: "Presupuesto critico"
+
+  construction_start:
+    label_en: "Construction"
+    label_es: "Obra"
+    source_columns: [H6, H7, Etapa]
+    rules:
+      GREEN:
+        condition: "started"
+        reason_es: "Obra iniciada"
+      YELLOW:
+        condition: "default"
+        reason_es: "Obra pendiente"

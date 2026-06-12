@@ -1,0 +1,14 @@
+exclude_stages:
+  - COMPLETED
+  - CANCELLED
+  - ON HOLD
+  - FINALIZADO
+  - CANCELADO
+  - ETAPA 0
+
+exclude_intervention_types: []
+
+segments: {}
+
+active_year: 2026
+filter_by_year: false

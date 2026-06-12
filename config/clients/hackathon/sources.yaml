@@ -1,0 +1,27 @@
+sources:
+  portfolio_plan:
+    enabled: true
+    file: "entrada_canonica/PDS_GESTION.xlsx"
+    sheet: "DATOS"
+    header_row: 1
+
+  procurement:
+    enabled: true
+    file: "entrada_canonica/PDS_SOURCING.xlsx"
+    sheets_by_type: true
+
+  permits:
+    enabled: true
+    file: "entrada_canonica/PDS_PERMITS.xlsx"
+    sheet: "DATOS"
+    header_row: 1
+
+  finance:
+    enabled: true
+    file: "entrada_canonica/PDS_FINANCE.xlsx"
+    sheet: "DATOS"
+    header_row: 1
+
+  external_sources:
+    enabled: false
+    sources: []

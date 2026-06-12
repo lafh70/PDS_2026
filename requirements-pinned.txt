@@ -1,0 +1,9 @@
+# Versiones pinned (RECOMENDACIONES 4 PILARES) — Python 3.10–3.12
+# pip install -r requirements-pinned.txt
+pandas==2.0.3
+openpyxl==3.10.10
+pyyaml==6.0
+requests==2.31.0
+python-dateutil==2.8.2
+pytest==7.4.0
+pytest-cov==4.1.0

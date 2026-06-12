@@ -1,0 +1,35 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+.vscode/
+.cursor/
+.idea/
+*.swp
+
+entrada/
+out_/
+logs/
+backups/
+galicia_data/
+
+# Mantener estructura de carpetas vacías
+!entrada_canonica/.gitkeep
+!out_/.gitkeep
+!logs/.gitkeep
+
+# Excel generados (conservar solo demo en entrada_canonica)
+*.xlsx
+!entrada_canonica/PDS_*.xlsx
+
+*.tmp
+*.temp
+*.log
+.env
+.env.local
+
+Thumbs.db
+.DS_Store

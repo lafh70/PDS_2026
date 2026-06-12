@@ -1,0 +1,30 @@
+procurement_types:
+  - code: DDO
+    label_en: "Design & Development Order"
+    label_es: "Orden de Diseño y Desarrollo"
+    enabled: true
+    sheet_name: "DATOS"
+    columns:
+      project_id: "Project_ID"
+      status: "Licitación_DDO"
+      contractor: "Estudio_DDO"
+      amount: "Monto_GC"
+    status_values:
+      awarded: ["AWARDED", "ADJUDICADO", "ADJUDICADA"]
+      cancelled: ["CANCELLED", "CANCELADO", "NO REQUIERE"]
+      pending: ["PENDING", "IN PROGRESS", "EN PROCESO"]
+
+  - code: GC
+    label_en: "General Contractor"
+    label_es: "Contratista General"
+    enabled: true
+    sheet_name: "DATOS"
+    columns:
+      project_id: "Project_ID"
+      status: "Licitación_GC"
+      contractor: "GC_Adjudicado"
+      amount: "Monto_GC"
+    status_values:
+      awarded: ["AWARDED", "ADJUDICADO", "ADJUDICADA"]
+      cancelled: ["CANCELLED", "CANCELADO", "NO REQUIERE"]
+      pending: ["PENDING", "IN PROGRESS", "EN PROCESO"]

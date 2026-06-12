@@ -1,0 +1,41 @@
+risk_thresholds:
+  permit_days_pending_warning: 30
+  permit_days_pending_critical: 60
+  budget_warning_pct: 71
+  budget_critical_pct: 86
+  milestone_overdue_days: 0
+  procurement_start_warning_days: 30
+  forecast_critical_days: 180
+
+alert_templates:
+  BUDGET_OVERRUN:
+    title_en: "Critical budget: {project_name}"
+    title_es: "Presupuesto critico: {project_name}"
+    description_en: "Project consuming {pct}% of approved budget"
+    description_es: "El proyecto consume {pct}% del presupuesto aprobado"
+    action_en: "Request additional cost center or review scope"
+    action_es: "Solicitar BC adicional o revisar alcance"
+
+  BUDGET_WARNING:
+    title_en: "Budget warning: {project_name}"
+    title_es: "Alerta presupuesto: {project_name}"
+    description_en: "Project at {pct}% budget consumption"
+    description_es: "Proyecto al {pct}% de consumo presupuestario"
+
+  PERMIT_EXPIRED:
+    title_en: "Permit overdue: {project_name}"
+    title_es: "Permiso vencido: {project_name}"
+    description_en: "Permit pending {days} days without approval"
+    description_es: "Permiso pendiente {days} dias sin aprobacion"
+
+  MILESTONE_DELAYED:
+    title_en: "Milestone delayed: {project_name}"
+    title_es: "Hito retrasado: {project_name}"
+    description_en: "Milestone {hito} overdue by {days} days"
+    description_es: "Hito {hito} retrasado {days} dias"
+
+  PROCUREMENT_PENDING:
+    title_en: "Procurement not awarded: {project_name}"
+    title_es: "Licitacion sin adjudicar: {project_name}"
+    description_en: "Construction starts in {days} days, {type} not awarded"
+    description_es: "Obra inicia en {days} dias, {type} sin adjudicar"
