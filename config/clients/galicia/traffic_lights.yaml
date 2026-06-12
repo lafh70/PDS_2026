@@ -86,3 +86,28 @@ axes:
       YELLOW:
         condition: "default"
         reason_es: "Obra pendiente"
+
+  procurement_transport:
+    label_en: "Transport"
+    label_es: "Transporte"
+    source_columns: [Licitación_Transportista, H11]
+    critical_days_to_h11: 14
+    rules:
+      BLACK:
+        condition: "not required"
+        reason_es: "Transporte NO REQUIERE"
+      GREEN:
+        condition: "awarded"
+        reason_es: "Transportista adjudicado"
+      RED:
+        condition: "critical near H11"
+        reason_es: "Transporte sin adjudicar; H11 proximo"
+      YELLOW:
+        condition: "in process"
+        reason_es: "Licitacion transportista en proceso"
+      ORANGE:
+        condition: "quoting"
+        reason_es: "A la espera de cotizaciones"
+      WHITE:
+        condition: "not started"
+        reason_es: "Transporte por iniciar"

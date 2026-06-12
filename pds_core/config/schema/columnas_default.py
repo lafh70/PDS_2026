@@ -47,7 +47,9 @@ COLUMNAS_DEFAULT_SOURCING = [
     ColumnaDef("Licitación_GC", "text", tabla="SOURCING", orden_default=5),
     ColumnaDef("GC_Adjudicado", "text", tabla="SOURCING", orden_default=6),
     ColumnaDef("Fecha_Adj_GC", "date", tabla="SOURCING", orden_default=7),
-    ColumnaDef("Monto_GC", "number", tabla="SOURCING", orden_default=8),
+    ColumnaDef("Licitación_Transportista", "text", tabla="SOURCING", orden_default=8),
+    ColumnaDef("Empresa_Transportista", "text", tabla="SOURCING", orden_default=9),
+    ColumnaDef("Monto_GC", "number", tabla="SOURCING", orden_default=10),
 ]
 
 COLUMNAS_DEFAULT_PERMITS = [

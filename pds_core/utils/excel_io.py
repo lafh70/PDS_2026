@@ -39,7 +39,10 @@ def write_sheet(filepath: str | Path, sheet_name: str, df: pd.DataFrame) -> None
 
     ws = wb.create_sheet(sheet_name)
     _df_to_ws(df, ws)
-    wb.save(tmp_path)
+    try:
+        wb.save(tmp_path)
+    finally:
+        wb.close()
     shutil.move(str(tmp_path), str(path))
 
 

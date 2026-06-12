@@ -18,6 +18,7 @@ H10,H10,portfolio_plan,parse_date
 H11,H11,portfolio_plan,parse_date
 Licitación_DDO,Licitación_DDO,procurement,normalize_enum
 Licitación_GC,Licitación_GC,procurement,normalize_enum
+Licitación_Transportista,Licitación_Transportista,procurement,normalize_enum
 GC_Adjudicado,GC_Adjudicado,procurement,
 Status_Permiso,Status_Permiso,permits,normalize_enum
 Tipo_Permiso,Tipo_Permiso,permits,normalize_enum

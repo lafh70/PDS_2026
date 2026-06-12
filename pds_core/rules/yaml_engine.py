@@ -69,6 +69,29 @@ def eval_axis(row: dict, axis_key: str, tl: dict) -> tuple[str, str]:
             return "RED", rules.get("RED", {}).get("reason_es", "GC vencido")
         return "YELLOW", rules.get("YELLOW", {}).get("reason_es", "GC en proceso")
 
+    if axis_key == "procurement_transport":
+        status = _txt(_v(row, "Licitación_Transportista", "Transportista", "Transport_Status"))
+        h11 = parse_date(_v(row, "H11"))
+        critical_days = int(axis.get("critical_days_to_h11", 14))
+        if not status or status == "TBD":
+            return "WHITE", rules.get("WHITE", {}).get("reason_es", "Transporte por definir")
+        if any(k in status for k in CANCEL) or "MOVIMIENTO DE LATAS" in status or "MOVIMIENTO" in status:
+            return "BLACK", rules.get("BLACK", {}).get("reason_es", "Transporte NO REQUIERE")
+        if any(k in status for k in AWARDED):
+            return "GREEN", rules.get("GREEN", {}).get("reason_es", "Transportista adjudicado")
+        if h11 and not any(k in status for k in AWARDED):
+            days_to_h11 = (h11 - today).days
+            if ("A COTIZAR" in status or "COTIZAR" in status) and 1 <= days_to_h11 <= critical_days:
+                reason = rules.get("RED", {}).get("reason_es", "Transporte sin adjudicar; H11 proximo")
+                return "RED", f"{reason} ({days_to_h11}d)"
+        if "EN PROCESO" in status:
+            return "YELLOW", rules.get("YELLOW", {}).get("reason_es", "Licitacion transportista en proceso")
+        if "A COTIZAR" in status or "COTIZAR" in status:
+            return "ORANGE", rules.get("ORANGE", {}).get("reason_es", "A la espera de cotizaciones")
+        if "POR INICIAR" in status:
+            return "WHITE", rules.get("WHITE", {}).get("reason_es", "Transporte por iniciar")
+        return "YELLOW", rules.get("YELLOW", {}).get("reason_es", "Transporte en seguimiento")
+
     if axis_key == "permits":
         status = _txt(_v(row, "Status_Permiso", "PERMIT_Status"))
         h9 = parse_date(_v(row, "H9"))
@@ -121,6 +144,7 @@ def build_semaforos_row(row: dict, tl: dict) -> dict:
     axes = [
         ("procurement_ddo", "DDO"),
         ("procurement_gc", "GC"),
+        ("procurement_transport", "TRANSPORT"),
         ("permits", "PERMITS"),
         ("finance", "FINANCE"),
         ("construction_start", "CONSTRUCTION"),

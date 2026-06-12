@@ -28,3 +28,17 @@ procurement_types:
       awarded: ["AWARDED", "ADJUDICADO", "ADJUDICADA"]
       cancelled: ["CANCELLED", "CANCELADO", "NO REQUIERE"]
       pending: ["PENDING", "IN PROGRESS", "EN PROCESO"]
+
+  - code: TRANSPORT
+    label_en: "Transport & Logistics"
+    label_es: "Transporte y Logística"
+    enabled: true
+    sheet_name: "DATOS"
+    columns:
+      project_id: "Project_ID"
+      status: "Licitación_Transportista"
+      contractor: "Empresa_Transportista"
+    status_values:
+      awarded: ["AWARDED", "ADJUDICADO", "ADJUDICADA"]
+      cancelled: ["CANCELLED", "CANCELADO", "NO REQUIERE", "MOVIMIENTO DE LATAS"]
+      pending: ["PENDING", "EN PROCESO", "A COTIZAR", "POR INICIAR"]

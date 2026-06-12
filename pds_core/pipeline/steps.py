@@ -56,6 +56,7 @@ def _col(df: pd.DataFrame, *names: str) -> str | None:
         "Tipo_Intervención": "Intervention_Type",
         "Licitación_DDO": "DDO_Status",
         "Licitación_GC": "GC_Status",
+        "Licitación_Transportista": "Transport_Status",
         "Status_Permiso": "PERMIT_Status",
         "BC_Nro": "BC_Number",
     }

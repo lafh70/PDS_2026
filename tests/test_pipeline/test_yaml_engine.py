@@ -42,3 +42,25 @@ def test_risk_budget_from_yaml():
     risks = eval_risks(row, rt)
     types = [r["Risk_Type"] for r in risks]
     assert "BUDGET_OVERRUN" in types
+
+
+def test_transport_red_near_h11():
+    from datetime import date, timedelta
+
+    tl = _load("traffic_lights.yaml")
+    h11 = (date.today() + timedelta(days=8)).isoformat()
+    row = {
+        "Project_ID": "ACME-T01",
+        "Licitación_Transportista": "A COTIZAR",
+        "H11": h11,
+    }
+    r = build_semaforos_row(row, tl)
+    assert r["TRANSPORT_State"] == "RED"
+    assert "TRANSPORT_Reason" in r
+
+
+def test_transport_black_not_required():
+    tl = _load("traffic_lights.yaml")
+    row = {"Project_ID": "ACME-T02", "Licitación_Transportista": "NO REQUIERE", "H11": "2026-12-01"}
+    r = build_semaforos_row(row, tl)
+    assert r["TRANSPORT_State"] == "BLACK"
