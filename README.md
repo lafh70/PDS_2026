@@ -12,12 +12,14 @@ Plataforma PMO **config-driven** para seguimiento de portafolio de obras.
 
 ## Inicio rápido
 
-**Windows — doble clic o terminal:**
+**Windows — doble clic en `PDS_2026.bat` o desde terminal:**
 
 ```powershell
-PDS_2026.bat              # menu interactivo
-PDS_2026.bat install      # primera instalacion
-PDS_2026.bat demo         # demo hackathon
+.\PDS_2026.bat              # menu interactivo (PowerShell: usar .\ delante)
+.\PDS_2026.bat install      # primera instalacion
+.\PDS_2026.bat demo         # demo hackathon
+# Alternativa PowerShell:
+.\PDS_2026.ps1
 ```
 
 ```powershell

@@ -221,10 +221,13 @@ goto MENU
 
 :HELP
 echo.
-echo Uso:
-echo   PDS_2026.bat           Menu interactivo
-echo   PDS_2026.bat install   Instalar dependencias
-echo   PDS_2026.bat demo      Demo hackathon
-echo   PDS_2026.bat test      Ejecutar tests
+echo Uso (PowerShell: anteponer .\ al nombre del archivo):
+echo   .\PDS_2026.bat           Menu interactivo
+echo   .\PDS_2026.bat install   Instalar dependencias
+echo   .\PDS_2026.bat demo      Demo hackathon
+echo   .\PDS_2026.bat test      Ejecutar tests
+echo   .\PDS_2026.ps1           Mismo menu desde PowerShell
+echo.
+echo Tambien puedes hacer doble clic en PDS_2026.bat desde el Explorador.
 echo.
 exit /b 0
