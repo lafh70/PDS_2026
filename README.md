@@ -12,6 +12,14 @@ Plataforma PMO **config-driven** para seguimiento de portafolio de obras.
 
 ## Inicio rápido
 
+**Windows — doble clic o terminal:**
+
+```powershell
+PDS_2026.bat              # menu interactivo
+PDS_2026.bat install      # primera instalacion
+PDS_2026.bat demo         # demo hackathon
+```
+
 ```powershell
 git clone <URL> PDS_2026 && cd PDS_2026
 python -m venv venv && .\venv\Scripts\activate
