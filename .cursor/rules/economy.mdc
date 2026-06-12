@@ -1,0 +1,9 @@
+---
+description: Modelo rapido y respuestas concisas (menor consumo de tokens)
+alwaysApply: true
+---
+
+Usa el enfoque mas ligero posible: respuestas breves y directas, sin repetir contexto.
+Prefiere el modelo Fast o low-fast disponible (p. ej. composer-2.5-fast, gpt-5.2-low-fast).
+No explores archivos innecesarios si la pregunta es concreta; usa @archivos cuando aplique.
+Responde en espanol.

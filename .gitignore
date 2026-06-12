@@ -6,7 +6,9 @@ __pycache__/
 htmlcov/
 
 .vscode/
-.cursor/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 .idea/
 *.swp
 
